@@ -1,0 +1,29 @@
+
+<resources>
+    <string name="app_name">Rick and Morty</string>
+    <string name="game_over">Game Over</string>
+    <string name="quiz">QUIZ</string>
+    <string name="title">Rick and Morty</string>
+    <string name="rules">Rules</string>
+    <string name="about">About</string>
+    <string name="play">PLAY</string>
+    <string name="title_about_trivia">About Rick and Morty</string>
+    <string name="title_trivia_rules">The Rules</string>
+    <string name="about_text">The Rick and Morty quiz will help remind you of important concepts you have learned by watching Rick and Morty.\n\nConsider modifying the questions and graphics to make this game your own!</string>
+    <string name="rules_text">Select the answer from the options given. Once you answer a question, you cant change your answer. Once you have answered all the questions, you will have to go to a page that tells you your score.</string>
+
+    <!-- TODO: Remove or change strings you don't need-->
+    <string name="try_again">Try again!</string>
+    <string name="trivia_hint">Trivia Hint</string>
+    <string name="title_android_trivia_question">Android Trivia (%1$d/%2$d)</string>
+    <string name="share_success_text">I mastered #UdacityAndroidTrivia with %1$d/%2$d correct questions!</string>
+    <string name="submit_button">Submit</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="share">Share</string>
+    <string name="sharing_not_available">Sharing Not Available</string>
+    <string name="select_an_avatar">Select an Avatar</string>
+    <string name="android_trivia">Android Trivia</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
