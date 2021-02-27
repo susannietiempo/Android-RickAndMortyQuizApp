@@ -11,6 +11,11 @@
     <string name="title_trivia_rules">The Rules</string>
     <string name="about_text">The Rick and Morty quiz will help remind you of important concepts you have learned by watching Rick and Morty.\n\nConsider modifying the questions and graphics to make this game your own!</string>
     <string name="rules_text">Select the answer from the options given. Once you answer a question, you cant change your answer. Once you have answered all the questions, you will have to go to a page that tells you your score.</string>
+    <string name="true_Text">TRUE</string>
+    <string name="false_Text">FALSE</string>
+    <string name="your_score">Your Score: </string>
+    <string name="score">xx/xx</string>
+
 
     <!-- TODO: Remove or change strings you don't need-->
     <string name="try_again">Try again!</string>

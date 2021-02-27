@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
- package com.example.android.navigation
+ package com.example.android.navigation.title
 
 
 import android.os.Bundle
@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.android.navigation.R
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
 
