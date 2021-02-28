@@ -64,17 +64,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="top"
-                    app:srcCompat="@drawable/right_24"
                     android:visibility="@{gameVM.attempted &amp;&amp; gameVM.isCorrect ? View.VISIBLE : View.INVISIBLE}"
-                    />
+                    app:srcCompat="@drawable/right_24" />
 
                 <ImageView
                     android:id="@+id/wrong"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="top"
-                    app:srcCompat="@drawable/wrong_24"
                     android:visibility="@{gameVM.attempted &amp;&amp; !gameVM.isCorrect ? View.VISIBLE : View.INVISIBLE}"
+                    app:srcCompat="@drawable/wrong_24"
 
                     />
             </FrameLayout>
@@ -90,13 +89,17 @@
             android:onClick="@{() -> gameVM.next()}"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/falseRadioButton"
+            app:layout_constraintTop_toBottomOf="@+id/answerScroll"
+            app:layout_constraintVertical_bias="1.0" />
 
         <RadioButton
             android:id="@+id/trueRadioButton"
             android:layout_width="76dp"
             android:layout_height="34dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="1dp"
             android:layout_marginBottom="52dp"
             android:checked="@{gameVM.checkTrue}"
             android:enabled="@{!gameVM.attempted}"
@@ -105,6 +108,8 @@
             android:textSize="@dimen/answer_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/backButton"
+            app:layout_constraintTop_toBottomOf="@+id/answerScroll"
+            app:layout_constraintVertical_bias="1.0"
             tools:text="@string/true_Text" />
 
         <RadioButton
@@ -120,21 +125,23 @@
             android:textSize="@dimen/answer_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/forwardButton"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.882"
             app:layout_constraintStart_toEndOf="@+id/trueRadioButton"
+            app:layout_constraintTop_toBottomOf="@+id/answerScroll"
             tools:text="@string/false_Text" />
 
         <Button
             android:id="@+id/backButton"
             android:layout_width="38dp"
             android:layout_height="43dp"
-            android:layout_marginStart="52dp"
+            android:layout_marginStart="32dp"
             android:layout_marginBottom="40dp"
             android:drawableRight="@drawable/ic_baseline_navigate_before_24"
             android:onClick="@{() -> gameVM.prev()}"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answerScroll" />
 
         <TextView
             android:id="@+id/scoreTallyText"
