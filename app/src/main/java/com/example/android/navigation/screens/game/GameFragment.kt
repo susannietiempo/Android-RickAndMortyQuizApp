@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.navigation.game
+package com.example.android.navigation.screens.game
 
 import android.os.Bundle
 import android.util.Log
@@ -22,9 +22,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.example.android.navigation.R
@@ -58,12 +58,24 @@ class GameFragment : Fragment() {
         // This is used so that the binding can observe LiveData updates
         binding.lifecycleOwner = viewLifecycleOwner
 
-
+        // Observer for the Game finished event
+        viewModel.eventGameFinished.observe(viewLifecycleOwner, Observer<Boolean> { hasFinished ->
+            if (hasFinished) gameFinished()
+        })
 
 
         return binding.root
     }
 
+    /**
+     * Called when the game is finished
+     */
+    private fun gameFinished() {
+        val action = GameFragmentDirections.actionGameFragmentToGameOverFragment(viewModel.score.value.toString())
+        NavHostFragment.findNavController(this).navigate(action)
+
+        viewModel.onGameFinishComplete()
+    }
 
 
 }

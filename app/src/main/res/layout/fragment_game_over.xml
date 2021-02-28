@@ -3,13 +3,21 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.android.navigation.gameOver.GameOverFragment">
+    tools:context="com.example.android.navigation.screens.gameOver.GameOverFragment">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="score"
+            type="com.example.android.navigation.screens.gameOver.Score" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/gameOverConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/design_default_color_background">
+
 
         <ImageView
             android:id="@+id/tryAgainImage"
@@ -24,29 +32,16 @@
             app:srcCompat="@drawable/rnm04" />
 
         <TextView
-            android:id="@+id/scoreText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="@string/your_score"
-            android:textColor="@color/colorAccent"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tryAgainImage" />
-
-        <TextView
             android:id="@+id/actualScoreText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="34dp"
-            android:text="@string/score"
+            android:text="@{score.score}"
             android:textColor="@color/colorAccent"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/scoreText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tryAgainImage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.android.navigation.game
+package com.example.android.navigation.screens.game
 
 import android.util.Log
 import androidx.lifecycle.LiveData

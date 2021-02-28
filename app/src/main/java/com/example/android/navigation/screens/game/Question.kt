@@ -1,4 +1,4 @@
-package com.example.android.navigation.game
+package com.example.android.navigation.screens.game
 
 data class Question (
         val questionId:Int,

@@ -9,7 +9,7 @@
         <import type="android.view.View"/>
         <variable
             name="gameVM"
-            type="com.example.android.navigation.game.GameViewModel" />
+            type="com.example.android.navigation.screens.game.GameViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

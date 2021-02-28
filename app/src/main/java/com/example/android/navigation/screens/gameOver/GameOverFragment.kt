@@ -14,19 +14,40 @@
  * limitations under the License.
  */
 
-package com.example.android.navigation.about
+package com.example.android.navigation.screens.gameOver
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.android.navigation.R
+import com.example.android.navigation.databinding.FragmentGameBinding
+import com.example.android.navigation.databinding.FragmentGameOverBinding
+import com.example.android.navigation.screens.game.GameViewModel
+import kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf
 
-class RulesFragment : Fragment() {
+
+
+class GameOverFragment : Fragment() {
+
+
+    private lateinit var binding: FragmentGameOverBinding
+    private var finScore: Score = Score("")
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rules, container, false)
+        val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_game_over, container, false)
+        if (getArguments() != null) {
+             finScore.score = getArguments()?.getString("score");
+
+        }
+        binding.score  = finScore;
+
+        return binding.root
     }
 }
