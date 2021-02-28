@@ -6,7 +6,7 @@
     tools:context="com.example.android.navigation.InGame">
 
     <data>
-
+        <import type="android.view.View"/>
         <variable
             name="gameVM"
             type="com.example.android.navigation.game.GameViewModel" />
@@ -65,7 +65,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="top"
                     app:srcCompat="@drawable/right_24"
-                    android:visibility="@{gameVM.attempted &amp;&amp; gameVM.isCorrect ? View.visible : View.invisible}"
+                    android:visibility="@{gameVM.attempted &amp;&amp; gameVM.isCorrect ? View.VISIBLE : View.INVISIBLE}"
                     />
 
                 <ImageView
@@ -74,7 +74,8 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="top"
                     app:srcCompat="@drawable/wrong_24"
-                    android:visibility="@{gameVM.attempted &amp;&amp; gameVM.isCorrect ? View.invisible : View.visible}"
+                    android:visibility="@{gameVM.attempted &amp;&amp; !gameVM.isCorrect ? View.VISIBLE : View.INVISIBLE}"
+
                     />
             </FrameLayout>
         </ScrollView>
